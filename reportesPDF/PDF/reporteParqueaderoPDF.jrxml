@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteParqueaderoPDF" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4505102c-ab2b-426e-858e-191726f3beb8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="desdejr" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastajr" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT NUMERO_TICKET,PLACA,TO_CHAR(FECHA,'yyyy-MM-dd') AS FECHA,HORA_ENTRADA,HORA_SALIDA,TIEMPO
+FROM TICKET
+WHERE FECHA>=$P{desdejr} AND FECHA <=$P{hastajr};]]>
+	</queryString>
+	<field name="NUMERO_TICKET" class="java.lang.Integer"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="FECHA" class="java.lang.String"/>
+	<field name="HORA_ENTRADA" class="java.sql.Time"/>
+	<field name="HORA_SALIDA" class="java.sql.Time"/>
+	<field name="TIEMPO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="253" y="7" width="238" height="68" forecolor="#0000FF" uuid="e74c2981-0f51-4602-a2c0-1c2721bd56d1"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Central                   Parking System]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="7" width="189" height="93" uuid="c18fbecd-ea57-43ca-b080-75843e3394ce"/>
+				<imageExpression><![CDATA["C:\\PROGRAMACION_BIEN\\Avance_interfaces\\reportesPDF\\sourse\\central-parking-logo-blue-smaller.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="5" width="100" height="20" uuid="17a4a6cc-5464-4c1c-a95c-c4c97738d583"/>
+				<text><![CDATA[NUMERO_TICKET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="6" width="56" height="20" uuid="6f0cba0b-3267-4569-996b-c5e840be788d"/>
+				<text><![CDATA[PLACA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="7" width="53" height="20" uuid="f803a115-7182-4d0d-9a97-da9e64abaf59"/>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="8" width="100" height="20" uuid="8785dab0-3792-4461-a460-62003acbd008"/>
+				<text><![CDATA[HORA_ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="10" width="100" height="20" uuid="77717600-a973-41f6-8efc-cc9481234603"/>
+				<text><![CDATA[HORA_SALIDA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="26" width="100" height="20" uuid="1d3672ed-83bb-4979-9021-c6f1ff3bf62c"/>
+				<textFieldExpression><![CDATA[$F{NUMERO_TICKET}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="30" width="56" height="20" uuid="df8f21ff-9da6-4509-b36b-14f7e3bb503d"/>
+				<textFieldExpression><![CDATA[$F{PLACA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="31" width="64" height="20" uuid="698f6c9d-2b29-4f58-aa20-81468a5e51b3"/>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="31" width="121" height="20" uuid="69b3993d-053e-4afa-8086-baf539d7c7fa"/>
+				<textFieldExpression><![CDATA[$F{HORA_ENTRADA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="32" width="100" height="20" uuid="5d165b33-9f30-4d2f-a49a-ac60ae1ab1af"/>
+				<textFieldExpression><![CDATA[$F{HORA_SALIDA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

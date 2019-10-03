@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteFactura1" language="groovy" pageWidth="524" pageHeight="307" whenNoDataType="NoPages" columnWidth="484" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b552b210-73b6-42de-b026-7fbd2ba2dc3b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CEDULA_IR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="N_TICKET_IR" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT CEDULA, NOMBRE, DIRECCION , TELEFONO, E_MAIL,NUMERO_TICKET,PLACA,FECHA,HORA_ENTRADA,HORA_SALIDA,TIEMPO
+FROM CLIENTE,TICKET]]>
+	</queryString>
+	<field name="CEDULA" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="TELEFONO" class="java.lang.String"/>
+	<field name="E_MAIL" class="java.lang.String"/>
+	<field name="NUMERO_TICKET" class="java.lang.Integer"/>
+	<field name="PLACA" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Date"/>
+	<field name="HORA_ENTRADA" class="java.sql.Time"/>
+	<field name="HORA_SALIDA" class="java.sql.Time"/>
+	<field name="TIEMPO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="6" width="237" height="67" forecolor="#0000FF" uuid="e2adaa43-42af-4750-b710-b9ebdf3ce2c2"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Central                   Parking System]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="166" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="26" y="109" width="399" height="20" backcolor="#CCCCFF" uuid="c43fbb6c-2c2b-40f7-8b3b-4d23830445d0"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="25" y="11" width="400" height="80" forecolor="#CCCCFF" backcolor="#CCCCFF" uuid="3b2ac160-86aa-489d-a92b-efe6d8ff5b03"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="48" y="11" width="100" height="20" uuid="9dc3c965-9304-4510-b8e8-ebc32f2f2faf"/>
+				<text><![CDATA[CEDULA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="11" width="127" height="20" uuid="684b71d6-9773-478e-9be9-31b8fc43c227"/>
+				<textFieldExpression><![CDATA[$F{CEDULA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="48" y="31" width="100" height="20" uuid="e2b6339a-78f8-4576-99c0-b4f6f6550b50"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="31" width="127" height="20" uuid="fcbde64f-2ffd-4ea1-afe7-67f2c443b72c"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="48" y="51" width="100" height="20" uuid="0068bcb9-4956-4ac8-8d95-7b1c6360e9c5"/>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="51" width="127" height="20" uuid="3e784ceb-7e24-4db4-8a6b-ec06a8825d1d"/>
+				<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="48" y="71" width="100" height="20" uuid="c795f5b6-a7f6-463c-9243-ea20a9226e42"/>
+				<text><![CDATA[E_MAIL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="71" width="127" height="20" uuid="bdcc5da3-aa9b-4964-aa9c-46ab366ff693"/>
+				<textFieldExpression><![CDATA[$F{E_MAIL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="112" width="66" height="20" uuid="2ab6c355-db66-46f2-a372-496d408a47f9"/>
+				<text><![CDATA[PLACA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="112" width="89" height="20" uuid="48e6bf68-b7e5-43c6-b740-a3c0b5daa57d"/>
+				<text><![CDATA[HORA_ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="10" width="56" height="20" uuid="b2752404-bb8a-4f0b-b410-2c9832bdfcd8"/>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="359" y="10" width="73" height="20" uuid="d2bef3e7-fa8a-4c00-a6e0-5fbbda0da609"/>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="132" width="89" height="20" uuid="37043ccb-fe71-4c48-8a6c-d081b0512b36"/>
+				<textFieldExpression><![CDATA[$F{HORA_ENTRADA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="132" width="71" height="20" uuid="13bec2f6-6619-4a3e-836f-1af3208f4c28"/>
+				<textFieldExpression><![CDATA[$F{PLACA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="132" width="100" height="20" uuid="b06d0d21-d791-4d3a-bbf7-1c7f51f91487"/>
+				<textFieldExpression><![CDATA[$F{HORA_SALIDA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="233" y="109" width="100" height="20" uuid="54490e9c-808b-4d11-a213-1866dc99ecbd"/>
+				<text><![CDATA[HORA_SALIDA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="132" width="80" height="20" uuid="a1c5c890-f6fa-49f6-978e-0f0115b004c8"/>
+				<textFieldExpression><![CDATA[$F{TIEMPO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="112" width="102" height="20" uuid="3121c158-0f17-4346-ba22-25f2e799a038"/>
+				<text><![CDATA[TIEMPO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
